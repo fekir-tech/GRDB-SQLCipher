@@ -77,7 +77,7 @@ final class Pool<T: Sendable>: Sendable {
     ///       (1, then 2, etc).
     init(
         maximumCount: Int,
-        qos: DispatchQoS = .unspecified,
+        qos: DispatchQoS = .userInitiated,
         makeElement: @escaping @Sendable (_ index: Int) throws -> T)
     {
         GRDBPrecondition(maximumCount > 0, "Pool size must be at least 1")
